@@ -1,0 +1,238 @@
+/* Space out content a bit */
+body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #eeeeee;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+ /* border-bottom: 1px solid #e5e5e5; */
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+.container {
+    max-width: 1027px;
+	background-color: #fff;
+	box-shadow: inset 1px 0px 3px 0px #ABABAB,2px 0px 2px 0px #DDDDDD;
+	-webkit-box-shadow: inset 1px 0px 3px 0px #ABABAB,2px 0px 2px 0px #DDDDDD;
+	-moz-box-shadow: inset 1px 0px 3px 0px #ABABAB,2px 0px 2px 0px #DDDDDD;
+	-o-box-shadow: inset 1px 0px 3px 0px #ABABAB,2px 0px 2px 0px #DDDDDD;
+}
+
+
+/***************************************** Home Pages Styles *********************************/
+
+
+/************* Navigation Bar ***************/
+
+nav ul li a{
+	color:#000;
+}
+
+nav ul li.active a{
+	color:#31409F;
+}
+
+.divider-vertical {
+height: 50px;
+margin: 0 0px;
+border-left: 1px solid #F2F2F2;
+border-right: 1px solid #FFF;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+    background-color:transparent;
+}
+
+
+/************* Right Panel ***************/
+.well-feature{ 
+    height:150px; 
+	background-color:#0097FE;
+	color:#fff;
+}
+
+.well-brochure{ 
+	margin-top:30px;
+    height:140px; 
+	background-color:#95B5CE;
+	color:#fff;
+}
+
+/************* Bottom Panel ***************/
+.well-process-h{ 
+    height:170px; 
+	background-color:#F5FAFF;
+}
+
+/********************* Main Content **********************/
+
+.content {
+  margin: 40px 0;
+}
+.content p + h4 {
+  margin-top: 28px;
+}
+
+blockquote.h-heading {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  margin-bottom:10px;
+  border-left: 3px solid #0097FE;
+} 
+.welcome-text{
+padding-left:10px;
+}
+.ul-text{
+padding-left:0px;
+list-style: none;
+}
+ul.ul-text li:before {
+		content: "\203A \0020";
+		font-size:20px;
+		width:10px;
+}
+
+/***************** Common Styles *************************/
+.no-padding{
+padding:0px;
+}
+
+.p-size1{
+font-size:14px;
+}
+.p-size2{
+font-size:12px;
+}
+
+.vspace1{
+margin-top:30px;
+}
+
+.login-bg{ 
+	background-color:#6d7a8d;
+}
+
+.color-white{
+	color:#fff;
+}
+
+/***************** Login In ***********************************/
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin,
+.form-signin .checkbox {
+  margin-bottom: 0px;
+}
+.checkbox{
+
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-signin-bg {
+  background-color: hsl(172, 70%, 9%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#53739c", endColorstr="#6a9be0");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#53739c), to(#6a9be0));
+  background-image: -moz-linear-gradient(top, #53739c, #6a9be0);
+  background-image: -ms-linear-gradient(top, #53739c, #6a9be0);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #53739c), color-stop(100%, #6a9be0));
+  background-image: -webkit-linear-gradient(top, #53739c, #6a9be0);
+  background-image: -o-linear-gradient(top, #53739c, #6a9be0);
+  background-image: linear-gradient(#53739c, #6a9be0);
+  border-color: #514D4D;
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.82);
+  -webkit-font-smoothing: antialiased;
+}
+
+.forgot-pass{
+text-decoration:underline;
+}
+
+.custom-checkbox{
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        top: 3px;
+        background: url("../images/checkbox.png") no-repeat;
+    }
+    .custom-checkbox:hover{
+        background: url("../images/checkbox.png") no-repeat;
+    }
+    .custom-checkbox.selected{
+        background: url("../images/checkbox_over.png") no-repeat;
+    }
+    .custom-checkbox input[type="checkbox"]{
+        margin: 0;
+        position: absolute;
+        z-index: 2;            
+        cursor: pointer;
+        outline: none;
+        opacity: 0;
+        /* CSS hacks for older browsers */
+        _noFocusLine: expression(this.hideFocus=true); 
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        -khtml-opacity: 0;
+        -moz-opacity: 0;
+    }
+
+#inputUser{
+padding-left:30px;
+background: white url("../images/user_icon.png") left no-repeat;
+}
+	
+#inputPassword{
+padding-left:30px;
+background: white url("../images/password_icon.png") left no-repeat;
+}

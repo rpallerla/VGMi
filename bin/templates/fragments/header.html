@@ -1,0 +1,44 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-3.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+</head>
+<body>
+	<nav class="navbar navbar-default" th:fragment="header">
+		<div class="container-fluid  headerContent">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<p class="pull-left hazardLogo">
+				<img src="resources/images/hazmatLogo.png" alt="hazmatLogo" width="205" height="45" />&nbsp;&nbsp;
+				<small><label class="text-info">Release:</label> <label class="text-info" th:text="${@buildPropsLoader.getProjectVersion()}"></label></small>
+			</p>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="divider-vertical"></li>
+					<li class="dropdown"><a class="dropdown-toggle loggedInUser"
+						href="#" data-toggle="dropdown"><label th:text="${#authentication.name}"></label>&nbsp;
+							<strong class="caret"></strong>
+					</a>
+						<!--Roles: <span sec:authentication="principal.authorities"></span>-->
+						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+							<ul class="navbarMenu linkStyle" id="nav-links">
+								<li><a th:href="@{/search}">Search</a></li>
+								<li sec:authorize="hasAnyRole('ROLE_hazmat/hazmatadmin','ROLE_hazmat/hazmatdcm')">
+									<a th:href="@{/dcmReport}" onclick="window.location.reload();">DCM Report</a></li>
+								<li>
+									<form th:action="@{/j_spring_security_logout}" method="post">
+										<input type="submit" value="Logout" name="Logout" id="logout"/>
+										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+									</form>
+								</li>
+							</ul>
+						</div></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+</body>
+</html>

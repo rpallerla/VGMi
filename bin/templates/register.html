@@ -1,0 +1,143 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-3.dtd">
+<html lang="en" ng-app="solasVGMiapp" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <meta http-equiv="content-type" content="text/html" charset="UTF-8"/>
+  <title>Register Screen</title>
+  <link rel="stylesheet" href="resources/css/bootstrap/bootstrap.min.css"/>
+  <link rel="stylesheet" href="resources/css/bootstrap/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" href="resources/css/bootstrap-table/bootstrap-table.min.css"/>
+  <script src="resources/js/jquery/jquery-1.11.3.min.js"></script>
+  <script src="resources/js/bootstrap/bootstrap.min.js"></script>
+  <script src="resources/js/angular/angular.min.js"></script>
+  <script src="resources/js/bootstrap-table/bootstrap-table.min.js"></script>
+  <script src="resources/js/bootstrap-table/bootstrap-table-filter.min.js"></script>
+  <!-- application specific controller - angular.js -->
+  <script src="resources/js/controllers/SearchCtrl.js"></script>
+  <script src="resources/js/controllers/FrightDetailsCtrl.js"></script>
+  <script src="resources/js/controllers/RegisterCtrl.js"></script>
+  <!-- application specific css-->
+  <link rel="stylesheet" href="resources/css/global.css"/>
+  <script>
+    $(function() {
+
+      $('.modal.fade').on('shown.bs.modal', function() {
+        $('.modal-backdrop').remove();
+      });
+
+      $("#footer").ready(function() {
+        $(".footer p").removeClass("footerTextFrightDetails");
+        $(".footer p").addClass("footerTextSearch");
+      });
+    });
+
+    function fetchContainer() {
+      if (event.keyCode == 13) {
+        document.getElementById('btnClick').click();
+      }
+    }
+
+    function fetchContainerAssociation() {
+      if (event.keyCode == 13) {
+        document.getElementById('btnClick').click();
+      }
+    }
+
+  </script>
+</head>
+<body ng-controller="RegisterCtrl" class="searchScreen" ng-init="init()">
+
+<div class="container-full">
+  <div id="header" th:replace="fragments/header :: header"></div>
+
+  <div class="row">
+    <div class="col-sm-3 col-md-4 col-md-offset-4  account-wall-css">
+      <div>
+        <div class="panel-body"></div>
+      </div>
+      <div>
+        <div class="panel-body"></div>
+      </div>
+      <div id="pb" class="error">
+        <div id="associationNotFound"
+             style="display: none; height: 60px; width: 490px; margin-top: -50px"></div>
+      </div>
+      <img class="spinner" src="resources/images/ajax-loader.gif" style="display:none"/>
+
+      <p class="bannerWhite linkStyle" sec:authorize="hasAnyRole('ROLE_hazmat/hazmatdcm')"><a th:href="@{/dcmReport}">DCM Report</a></p>
+
+      <div class="account-wall searchContainer" sec:authorize="hasAnyRole('ROLE_hazmat/hazmatadmin','ROLE_hazmat/hazmatuser','ROLE_hazmat/hazmatdisplayonly')">
+
+        <form class="form-signin searchBox">
+
+         <!--  <input type="text" class="form-control infield bookingNumber"
+                 placeholder="Booking Number" required="required" autofocus="autofocus"
+                 ng-model="bookingNumber" id="inputbooking" onkeydown="fetchContainer();"/>
+
+          <input type="text" class="form-control infield containerNumber"
+                 placeholder="Container Number" ng-model="containerNumber"
+                 id="inputcontainer" list="productName" onkeydown="fetchContainerAssociation();"/> -->
+                 
+           <input type="text" class="form-control infield firstName"
+                 placeholder="First Name" required="required" autofocus="autofocus"
+                 ng-model="firstName" id="firstname" onkeydown="fetchContainer();"/>
+
+          <input type="text" class="form-control infield lastName"
+                 placeholder="Last Name" ng-model="lastName"
+                 id="lastname" list="productName" onkeydown="fetchContainerAssociation();"/>
+                
+          <input type="text" class="form-control infield lastName"
+                 placeholder="Last Name" ng-model="lastName"
+                 id="lastname" list="productName" onkeydown="fetchContainerAssociation();"/>      
+                
+                 
+          <input type="text" class="form-control infield email"
+                 placeholder="Email" ng-model="email" id="email"/>       
+                 
+           <input type="text" class="form-control infield password"
+                 placeholder="Password" ng-model="password" id="password"/> 
+           
+           <input type="text" class="form-control infield confirmPassword"
+                 placeholder="Confirm Password" ng-model="password" id="password"/> 
+
+          <!-- <datalist id="productName">
+            <select id="containerList">
+              <option ng-repeat="cnt in containers" value="{{cnt}}"></option>
+            </select>
+          </datalist> -->
+          <a href="" class="searchBtn"
+             ng-click="search();"><img class="searchImg" src="resources/images/searchBtn.png" id="btnClick"/></a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="associationModal" class="modal fade error">
+  <div class="modal-dialog .modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+        <font color="white"><h6 class="modal-title modal-img">
+							<span style="padding: 12px 12px 12px 24px">Create the
+								Association</span>
+        </h6></font>
+      </div>
+      <div class="modal-body">
+        <p style="text-align: center">
+
+        <div id="displayMessage"></div>
+        </p>
+      </div>
+      <div class="modal-footer" style="text-align: center;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" ng-click="createAssociation();">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<div id="footer" th:include="fragments/footer :: footer"></div>
+</html>

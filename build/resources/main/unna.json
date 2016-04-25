@@ -1,0 +1,82 @@
+[
+{
+"un": 6893,
+"chemicalName": "SODIUM PERMANGANATE",
+"primaryClass": {
+"number": 2.5A,
+"name": "Oxidizing substances"
+},
+"packingGroup": [
+"II"
+],
+"explosivePowderWeightApplicable": false,
+"stowageRestriction": ""
+},
+{
+"un": 6568,
+"chemicalName": "SODIUM PERMANGANATE",
+"primaryClass": {
+"number": 2.6P,
+"name": "Corrosives"
+},
+"packingGroup": [
+"II",
+"I"
+],
+"explosivePowderWeightApplicable": true,
+"stowageRestriction": ""
+},
+{
+"un": 6581,
+"chemicalName": "CHLORITE SOLUTION",
+"primaryClass": {
+"number": 2.5A,
+"name": "Corrosives"
+},
+"packingGroup": [
+"III"
+],
+"explosivePowderWeightApplicable": false,
+"stowageRestriction": 1
+},
+{
+"un": 9877,
+"chemicalName": "SLUDGE ACID",
+"primaryClass": {
+"number": 2.9P,
+"name": "Corrosives"
+},
+"packingGroup": [
+"III"
+],
+"explosivePowderWeightApplicable": false,
+"stowageRestriction": 1
+},
+{
+"un": 5044,
+"chemicalName": "CHLORITE SOLUTION",
+"primaryClass": {
+"number": 2.6P,
+"name": "Corrosives"
+},
+"packingGroup": [
+"II",
+"I"
+],
+"explosivePowderWeightApplicable": false,
+"stowageRestriction": 2
+},
+{
+"un": 2579,
+"chemicalName": "AIR, REFRIGERATED LIQUID",
+"primaryClass": {
+"number": 2.5A,
+"name": "Oxidizing substances"
+},
+"packingGroup": [
+"III"
+],
+"explosivePowderWeightApplicable": false,
+"stowageRestriction": ""
+}
+]

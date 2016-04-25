@@ -1,0 +1,241 @@
+	
+<div id="wrapper" th:fragment="registration">	
+
+		<div class="row content">
+			<!-- Left Panel for Page content -->
+			<div class="col-lg-9">
+				<div>
+					<blockquote class="h-heading">
+					  <div class="p-size1 no-padding">Registration for </div>
+					  <p class="lead no-padding">Solas VGMi</p>
+					</blockquote>
+				</div>
+				<div ng-if="isError" style='color: red'>{{message}}</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="reg-info">Please fill out the following form to register in Solas VGMi application.</p>
+					</div>
+					<div class="col-lg-12">
+						<p class="reg-info" style='color: orange'>All Fields Are Required</p>
+					</div>
+				</div>
+				<div class="welcome-text">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="first-name" class="col-lg-3 control-label">First Name</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.firstname" class="form-control" id="first-name"/></div>
+						</div>
+						<div class="form-group">
+							<label for="last-name" class="col-lg-3 control-label">Last Name</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.lastname" class="form-control" id="last-name"/></div>
+						</div>
+						<div class="form-group">
+							<label for="phone" class="col-lg-3 control-label">Phone</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.phone" class="form-control" id="phone"/></div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-lg-3 control-label">Email</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.email" class="form-control" id="email"/></div>
+						</div>
+						<!-- Removing user id as per GH issue #239 -->
+						<!-- <div class="form-group">
+							<label for="userid" class="col-lg-3 control-label">User Id</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.userid" class="form-control" id="userid"/></div>
+						</div> -->
+						
+						<div class="form-group">
+							<label for="password" class="col-lg-3 control-label">Password</label>
+							<div class="col-lg-8"><input type="password" ng-model="registration.password" class="form-control" id="password" /></div>
+						</div>
+						<div class="form-group">
+							<label for="verify-password" class="col-lg-3 control-label">Confirm Password</label>
+							<div class="col-lg-8"><input type="password" ng-model="registration.confirmpassword" class="form-control" id="confirm-password" /></div>
+						</div>
+						<!-- <div class="form-group">
+							<label for="company-name" class="col-lg-3 control-label">Company Name</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.company" class="form-control" id="company-name"/></div>
+						</div>
+						<div class="form-group">
+							<label for="address" class="col-lg-3 control-label">Address</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.address" class="form-control" id="address"/></div>
+						</div>
+						<div class="form-group">
+							<label for="city" class="col-lg-3 control-label">City</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.city" class="form-control" id="city"/></div>
+						</div>
+						<div class="form-group">
+							<label for="state" class="col-lg-3 control-label">State/Province</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.state" class="form-control" id="state"/></div>
+						</div>
+						<div class="form-group">
+							<label for="zip" class="col-lg-3 control-label">Zip</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.zip" class="form-control" id="zip"/></div>
+						</div>
+						<div class="form-group">
+							<label for="country" class="col-lg-3 control-label">Country</label>
+							<div class="col-lg-8"><input type="text" ng-model="registration.country" class="form-control" id="country"/></div>
+						</div>
+						<div class="checkbox col-lg-11 text-left">
+							<label>	By Submitting this Registration Request form, I hereby agree to the terms in the <a href="#" data-toggle="modal" data-target="#terms">User Agreement</a> between myself, my employer and Matson. <a target="_blank" href="resources/dist/images/TERMS AND CONDITIONS HAZCAPTAIN.pdf" ><img src="resources/dist/images/printerIcon.png" /></a></label>
+							
+						</div> -->
+						<div class="form-group col-lg-12 vspace1">
+							 <div class="col-lg-6 text-right">&nbsp;</div>
+							 <div class="col-lg-3 text-right"><button type="button" class="btn reg-btn btn-md btn-block" ng-click="clearRegistration()">Clear</button></div>
+							 <div class="col-lg-3 text-right"><button type="button" class="btn reg-btn btn-md btn-block" ng-click="saveRegistration(registration)">Submit</button></div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--- Right Side Panel -->
+		<!-- 	<div class="col-lg-3">
+				<div class="well well-feature text-center">
+					<div><img src="dist/images/features_icon.png"></div>
+					<div>Features of</div>
+					<div><p class="lead">HazCaptain<sup>®</sup></p></div>
+				</div>
+				<div class="well well-brochure text-center">
+					<div><img src="dist/images/pdf_icon.png"></div>
+					<div>Hazardous Compatibility</div>
+					<div>Brochure</div>
+				</div>
+				<div class="well well-feature text-center vspace1">
+					<div><img src="dist/images/pdf_icon.png"></div>
+					<div>User Guide for</div>
+					<div><p class="lead">HazCaptain<sup>®</sup></p></div>
+				</div>
+			</div> -->
+		</div>
+      
+	<!-- Modal Terms -->
+						<div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="termsLabel">
+						  <div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content">
+							  <div class="modal-header bg-primary">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+								<h4 class="modal-title" id="termsLabel">User Agreement</h4>
+							  </div>
+							  <div class="modal-body">
+								<p class="text-primary">TERMS AND CONDITIONS</p>
+
+<p>This page states the terms and conditions (the "Terms and Conditions") under which a "User" or an "Authorized HAZcaptain User" may have access to USAHAZMAT@matson.com, hereafter the "Website" (as defined below) and its associated applications all of which are owned and copyrighted by an affiliate of Matson Navigation Company, Inc. ("Matson").</p>
+
+<p>Please read this Agreement carefully. By using this Website you agree that you have read and understand the Terms and Conditions set forth below, and that you will be subject to these Terms and Conditions. If you do not agree with any of the terms and conditions set forth herein, do not use this Website. </p>
+
+<p class="text-primary">Certain Definitions</p>
+
+<p>The "Website" is the Internet location at "USAHAZMAT@matson.com" and all of its associated applications (including but not limited to HAZcaptain) and any and all code, processes, artwork, information, systems or contents contained thereat. A "User" is a User of the Website, or any of its employees, agents or other entities that the User designates and who accesses or uses the Website. An "Authorized HAZcaptain User" is a User, or any of its employees, agents or other entities that the User designates and that is registered by Matson to use the HAZcaptain applications of the Website and to whom Matson has issued a HAZcaptain User ID and Password. Authorized HAZcaptain Users are bound by all the same Terms and Conditions as Users, as well as to the specific Terms and Conditions that apply to HAZcaptain. The term "User" includes all "Authorized HAZcaptain Users."</p>
+
+<p class="text-primary">General User Conduct</p>
+
+<p>All use of the Website will be for the benefit of the Users and Matson only. If any Users must leave their work area while logged into the Website, they will either logoff this system or activate an industry password protection device. Users will report all violations of these Terms and Conditions to Matson's Help Desk toll free at: 1-877-678-7447 when first observed or detected by them. </p>
+
+<p>Each User agrees (i) to abide by all applicable local, state, national, and international laws and regulations in using the Website; (ii) to use the information obtained from the Website for its legitimate business activities only; (iii) not to interfere with the use of the Website by other Users; (iv) to be solely responsible for its use of the Website and for the consequences of such use; (v) not to interfere with or disrupt the Website or servers or networks connected to the Website; (vi) to comply with all requirements, procedures, policies and regulations posted on the Website by Matson from time to time and or any networks connected to the Website; (vii) that abiding by these Terms and Conditions shall not breach any agreement with any third party; (viii) not to use the Website to violate the rights (including, without limitation, privacy or intellectual property rights) of another, including, without limitation, Matson; (ix) not to attempt to gain unauthorized access to restricted areas of the Website, to other computer systems or to networks connected to the Website; (x) not to collect or store data about other Users, Matson employees or Matson business partners; and (xi) not to upload or otherwise incorporate into the Website any item not previously approved by Matson.</p>
+
+<p>Matson reserves the right to expel any and all Users and prevent their further access to the Website for violating these Terms and Conditions or the law, and reserves the right to remove any communications, submissions or postings from the Website. The violation of any of the terms and conditions set forth in these Terms and Conditions shall result in the immediate revocation of the User's license to use the Site Material (as defined below) and obligates the User to immediately destroy any copies of the Site Material (as defined below) in its possession.</p>
+
+<p class="text-primary">Authorized HAZcaptain User Account</P>
+
+<p>In order to establish an account for use of the HAZcaptain applications of the Website, Authorized HAZcaptain Users will be required to provide certain relevant business information. Authorized HAZcaptain Users agree to provide to Matson only accurate and complete information, and further agree to update such information regularly to ensure that it remains current, accurate and complete. Authorized HAZcaptain Users, and not Matson, are solely responsible for the accuracy and completeness of the information furnished to Matson.</p>
+
+<p>Upon completing HAZcaptain's on-line registration process, Authorized HAZcaptain Users will be provided with a User ID and Password. Authorized HAZcaptain Users agree that they will not share any User ID and Password information with any other person or entity or permit it to be used by others. Each Authorized HAZcaptain User is solely responsible for keeping its User ID and Password confidential, and for all uses of its User ID and Password. Authorized HAZcaptain Users shall be solely liable for any and all damages that may arise as a result of the authorized or unauthorized use of its User ID and Password. Authorized HAZcaptain Users agree to notify Matson immediately of any unauthorized use of its User ID and Password, or of any other breach of security.</p>
+
+<p class="text-primary">Authorized HAZcaptain User Conduct</p>
+
+<p>All use of HAZcaptain on the Website will be solely for the benefit of the Authorized HAZcaptain User and Matson. If any Authorized HAZcaptain Users must leave their work area while logged into HAZcaptain on the Website, they will either logoff the system or activate an industry password protection device. Authorized HAZcaptain Users must report all violations of these Terms and Conditions to Matson' Help Desk toll free at: 1-877-678-7447 when first observed or detected by them. Authorized HAZcaptain Users agree that they will notify Matson Internet Registration desk when an Authorized HAZcaptain User with access to HAZcaptain on the Website is terminated from his or her current employment or is otherwise no longer authorized to gain access to HAZcaptain on the Website.</p>
+
+<p>Each Authorized HAZcaptain User specifically agrees (i) to abide by all applicable local, state, national, and international laws and regulations in using HAZcaptain; (ii) to use the information obtained from HAZcaptain for its legitimate business activities only; (iii) not to interfere with the use of HAZcaptain by other Authorized HAZcaptain Users; (iv) to be solely responsible for its use of HAZcaptain and for the consequences of such use; (v) not to interfere with or disrupt HAZcaptain or servers or networks connected to HAZcaptain; (vi) to comply with all requirements, procedures, policies and regulations posted on HAZcaptain or on the Website by Matson from time to time and or any networks connected to HAZcaptain; (vii) that abiding by these Terms and Conditions shall not breach any agreement with any third party; (viii) not to use HAZcaptain to violate the rights (including, without limitation, privacy or intellectual property rights) of another, including, without limitation, Matson; (ix) not to attempt to gain unauthorized access to restricted areas of HAZcaptain, or to other computer systems or to networks connected to HAZcaptain; (x) not to collect or store data about other Authorized HAZcaptain Users, Matson employees or Matson partners; and (xi) not to upload or otherwise incorporate into HAZcaptain any item not previously approved by Matson.</p>
+
+<p>Matson reserves the right to expel Authorized HAZcaptain Users and prevent their further access to HAZcaptain for violating these Terms and Conditions or the law, and reserves the right to remove any communications, submissions or postings from HAZcaptain. The violation of any of the terms and conditions set forth in these Terms and Conditions shall result in the immediate revocation of an Authorized HAZcaptain User's license to use the Site Material (as defined below) and obligates the Authorized HAZcaptain User to immediately destroy any copies of the Site Material (as defined below) in its possession.</p>
+
+<p class="text-primary">Copyright</p>
+
+<p class="text-primary">Use of Site Material</p>
+
+<p>The contents of the Website, such as text, graphics, images and other content (the "Site Material") are protected by copyright under both United States and foreign laws. Each User acknowledges that it does not acquire any ownership rights by downloading copyrighted material. A Matson affiliate owns a copyright in the selection, coordination, arrangement and enhancement of the Site Material, as well as in the content original to it and, in some cases, in the content provided by third parties. Matson authorizes each User to view and download a single copy of the Site Material for its legitimate business use. Unauthorized use of the Site Material violates copyright, trademark, and other laws. Each User agrees to retain all copyright and other proprietary notices contained in the original Site Material or on any copy it makes of such material. Users may not sell or modify, or attempt to sell or modify, the Site Material or reproduce, display, distribute, publish, transmit, create derivative works from or otherwise use or exploit, or attempt to use or exploit, the Site Material in any way (i) that violates these Terms and Conditions or (ii) except for its own legitimate business use. Users may not, under any circumstances, copy, modify, create a derivative work of, reverse engineer, reverse assemble or otherwise attempt to discover any software or source code. Use of the Site Material on any other website or in a networked environment is prohibited. Some of the foregoing prohibited acts are also punishable by law.</p>
+
+<p class="text-primary">User Submissions</p>
+
+<p>The User acknowledges that any information of any kind (the "Information") that it submits or uploads to Matson or HAZcaptain on the Website shall be deemed, and shall remain the property of Matson. By submission or upload of any Information to Matson, the User assigns to Matson, and Matson shall exclusively own, all now known or hereafter existing rights to such Information of every kind and nature throughout the world, and shall be entitled to unrestricted use of the Information for any purpose whatsoever, commercial or otherwise, without compensation to the User or any other party.</p>
+
+<p class="text-primary">User Communications</p>
+
+<p>As a user of the Website, the User is responsible for its own communications and the consequences of its postings. Therefore, the User may not post to the Website or transmit to Matson or another User any of the following: (i) material that is copyrighted, unless the User is the copyright owner or has the permission of the copyright owner to do so; (ii) material that reveals trade secrets, unless the User owns them or has the permission of the owner to do so; (iii) material that infringes on any other intellectual property rights of others or on the privacy or publicity rights of others; (iv) material that is obscene, defamatory or libelous, deceptive, threatening, harassing, abusive, hateful, or embarrassing to another the User or any other person or entity; (v) advertisements, solicitations of business, "junk mail", "spam", "chain letters", "pyramid schemes" or unsolicited mass distributions of any kind; or (vi) any documents that contain viruses, worms, or other harmful components.</p>
+
+<p>The User can be held legally liable for the content of its communications and the User may be held legally accountable if the content includes, for example, defamatory comments, objectionable material or material protected by copyright, trademark, patent, or trade secret law and is used without the permission of the author or owner.</p>
+
+<p class="text-primary">Links</p>
+
+<p>The Website contains links to websites owned by third parties over whom Matson has no control. These links are provided solely as a convenience to the User and are not an endorsement by Matson of the contents on those other sites. Matson is not responsible for the content of any linked websites and makes no representations regarding the content or accuracy of materials on such sites. The User agrees to not hold Matson liable for any costs or damages that may arise as a result of the User's use of any third-party web site. If the User decides to visit any third-party websites using links from the Website, the User does so at its own risk.</p>
+
+<p class="text-primary">Trademarks</p>
+
+<p>The names, marks and logos appearing in the Site Material are, unless otherwise noted, trademarks owned by or licensed to Matson or an affiliated company. The use of these marks, except as provided in these Terms and Conditions, is prohibited.</p>
+
+<p>The following are owned trademarks of a Matson affiliate:</p>
+
+<ul>
+<li>HAZcaptain</li>
+</ul>
+<p class="text-primary">Other Trademarks</p>
+
+<p>From time to time, Matson makes fair use in the Website of trademarks owned and used by third parties. Any such marks are clearly noted, and Matson makes no claim to ownership of those marks. For example:</p>
+<ul>
+<li>Windows, Internet Explorer are registered trademarks of Microsoft Corporation.</li>
+<li>Acrobat and Adobe are registered trademarks of Adobe Corporation.</li>
+</ul>
+<p class="text-primary">Privacy Policy</p>
+
+<p>Matson may require certain personal information from the User in order to provide registration and other access to the applications provided on the Website. The User can visit the Website without providing this personal information but if the Users choose to give Matson personal or other information via the Website, we intend to use this information only for the furthering of the business purposes for which it was provided. Matson may analyze this information for trends and statistics but will not sell this information to other companies. </p>
+
+<p>The Website provides links to other websites for the benefit of the User; Matson is not responsible for the privacy practices or the content of such websites.</p>
+
+<p>The Website may contain "cookies", a technology that provides the User with tailored information. A cookie is an element of data that the Website can send to the User's browser, which may then store the tailored information on the User's system. Matson' Website may use cookies to better serve the User when the User returns to the Website and to maintain the quality of the interaction between the User and the Website. The User can set its browser to notify it when it receives a cookie so that the User may decide whether or not to accept the cookie. However, the User should note that some of the applications of the Website may depend upon the placement of cookies in order to function properly.</p>
+
+<p class="text-primary">Legal Disclaimer</p>
+
+<p class="text-primary">Indemnity</p>
+
+<p>By using the Website, the User agrees to defend, indemnify, and hold harmless Matson, its officers, directors, affiliates, employees, agents, suppliers, other Authorized Users, independent contractors, partners and representatives from and against any and all losses, claims, damages, costs and expenses (including reasonable legal and accounting fees) that Matson may become obligated to pay arising or resulting from (i) the negligence or willful misconduct of the User, (ii) the use or misuse of the Website by the User, (iii) the authorized or unauthorized use of the User's User ID and Password, (iv) the User's breach of these Terms and Conditions or (v) the User's violation of or failure to comply with applicable laws. Matson reserves the right to assume or participate, at the User's expense, in the investigation, settlement and defense of any such action or claim.</p>
+
+<p class="text-primary">Service Interruption; Reliance by User; User's Risk; Warranty</p>
+
+<p>Matson will make all commercially reasonable efforts to keep the Website operational. However, the User acknowledges that technical difficulties may, from time to time, temporarily interrupt service. The User agrees not to hold Matson liable for any of the consequences of such interruptions.</p>
+
+<p>Matson cannot be responsible for the violation of these Terms and Conditions by any User, or for the reliance by the User upon any information submitted by other Users. Matson makes no representations about the results to be obtained from using the Website. The User uses the Website and its material at its own risk.</p>
+
+<p>The User understands and agrees that any material and/or data downloaded or otherwise obtained through the Website is at its own discretion and risk, and that the User is solely responsible for any damage to its computer systems or networks and for any loss of data that may result from the download of such material and/or data.</p>
+
+<p>MATSON DOES NOT WARRANT (A) THAT THE FUNCTIONALITY OF THE WEBSITE WILL BE UNINTERRUPTED OR ERROR-FREE, (B) THAT DEFECTS WILL BE CORRECTED, (C) THE WEBSITE AND ITS SERVER ARE FREE OF COMPUTER VIRUSES, WORMS OR OTHER HARMFUL MATERIAL, OR (D) THAT ANY SECURITY METHODS EMPLOYED WILL BE SUFFICIENT. IF THE USER'S USE OF THE WEBSITE OR THE SITE'S MATERIAL RESULTS IN ANY COSTS OR EXPENSES, INCLUDING, WITHOUT LIMITATION, THE NEED FOR SERVICING OR REPLACING EQUIPMENT OR DATA, MATSON SHALL NOT BE RESPONSIBLE FOR THOSE COSTS OR EXPENSES.</p>
+
+<p>THE WEBSITE, ITS MATERIAL, ITS USE AND THE RESULTS OF SUCH USE ARE PROVIDED ON AN "AS IS" BASIS WITHOUT ANY WARRANTIES OF ANY KIND. IN RELATION TO ANY USER ID, PASSWORD, LINKS, LINKED SITES, THE WEBSITE, ITS MATERIAL, ITS USE AND THE RESULTS OF SUCH USE, MATSON, TO THE FULLEST EXTENT PERMITTED BY LAW, DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT OF THIRD PARTIES' RIGHTS, AND THE WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE ALL OF WHICH USER HEREBY AFFIRMATIVELY WAIVES. APPLICABLE LAW MAY NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES SO THE ABOVE EXCLUSION MAY NOT APPLY TO YOU. ALTHOUGH MATSON STRIVES TO PROVIDE THOROUGH AND ACCURATE MATERIALS ON ITS SITE, IT MAKE NO WARRANTIES ABOUT THE ACCURACY, RELIABILITY, CORRECTNESS, COMPLETENESS, OR TIMELINESS OF THE MATERIAL, SERVICES, SOFTWARE, TEXT, GRAPHICS, AND LINKS. AUTHORIZED USER AGREES TO NOT HOLD MATSON liable for any COSTS, EXPENSES OR damages that may arise as a result of the inaccuracy, unreliability, ineffectiveness or incorrect use of any information IT receives through THE WEBSITE.</p>
+
+<p class="text-primary">No Liability</p>
+
+<p>IN NO EVENT SHALL MATSON, OR ANY OF ITS AFFILIATES BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, INCIDENTAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, LOST PROFITS, OR DAMAGES RESULTING FROM LOST DATA OR BUSINESS INTERRUPTION) RESULTING FROM (A) THE WEBSITE, (B) INFORMATION ON THE WEBSITE, (C) THE USE OF MATERIAL ON THE WEBSITE OR SITES LINKED TO THE WEBSITE, (D) THE RESULTS OF SUCH USE, (E) THE INABILITY TO USE MATERIAL THE WEBSITE OR SITES LINKED TO THE WEBSITE, (F) ANY ABUSE BY ANY USER OF ACCESS TO THE WEBSITE OR (G) ANY USER'S FAILURE TO ALERT MATSON OF THE DEPARTURE OF ANOTHER USER WHO HAS ACCESS TO THE WEBSITE, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT MATSON IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. EACH USER'S SOLE REMEDY FOR ANY ERRORS OR OMISSIONS WITH RESPECT TO THE WEBSITE SHALL BE FOR MATSON TO CORRECT SUCH ERRORS OR OMISSIONS. BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, THE ABOVE EXCLUSION MAY NOT APPLY TO YOU. IN SUCH JURISDICTIONS, MATSON'S LIABILITY IS LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW. THIS PARAGRAPH WILL SURVIVE THE FAILURE OF ANY EXCLUSIVE OR LIMITED REMEDY.</p>
+
+<p class="text-primary">Prohibitions</p>
+
+<p>No individual may be permitted to use the Website if such individual lives in a country which is prohibited by law, regulation, treaty or administrative act from entering into trade relations with the United States or its citizens. At present, such countries include, without limitation, Cuba, Iran, North Korea, Syria and Sudan. Authorized User acknowledges that this list is not under the control of Matson and is subject to change without notice at any time.</p>
+
+<p class="text-primary">Modification</p>
+
+<p>Any modification of these Terms and Conditions by the User will be effective only if it is in writing and signed by Matson and the User. Matson reserves the right, in its sole discretion, to change, modify, add or remove portions of these Terms and Conditions at any time. Notification of any substantive and/or material changes to these Terms and Conditions or any Matson policy will be posted on the Website. IF ANY MODIFICATION IS UNACCEPTABLE TO THE USER, ITS SOLE RECOURSE IS TO DISCONTINUE USE OF THE WEBSITE</p>
+
+<p class="text-primary">Miscellaneous</p>
+
+<p>The Website originates from Phoenix, Arizona.   Matson does not claim that the materials on the Website are appropriate or may be used outside of the United States. Access to the Website may not be legal by certain persons or in certain countries. If the User accesses the Website from outside of the United States, it does so at its own risk and it is responsible for compliance with the laws of its jurisdiction.</p>
+
+<p>The User agrees that Matson, in its sole discretion, may remove or delete any content on the Website at any time without notice to the User.</p>
+
+<p>These Terms and Conditions are governed by and construed in accordance with the substantive laws of the State of California, without respect to its conflict of laws principles. Any and all disputes relating to or arising out of the interpretation or application of these Terms and Conditions shall be subject to dispute resolution as set forth in this paragraph which shall be the exclusive method of resolving disputes under this Agreement. In the ordinary course of business, Matson and User shall attempt to resolve any disputes by meetings of executives or other representatives who have authority to settle the controversy. In the event the dispute is not resolved, either party may submit the dispute to arbitration and shall provide written notice of the submission to the other party. The dispute shall be submitted for arbitration under the then applicable commercial dispute resolution and arbitration rules of the American Arbitration Association. All arbitrations shall be held in San Francisco, California and shall be completed within six (6) months of commencement. The decision of the arbitrator(s) shall be final and binding and judgment thereon may be entered in any court of competent jurisdiction. In no event shall any arbitration decision provide that one party shall be liable to the other for punitive, consequential, special, exemplary or indirect damages. Each party shall bear its own attorney's fees. The fees and expenses of the arbitrator(s) shall be borne equally by the parties. The parties shall continue to perform all obligations under these Terms and Conditions during the pendency of dispute resolution proceedings. The User agrees that any arbitration proceeding brought arising out of or relating to these Terms and Conditions or the use of the Website shall be filed within one (1) year of the date of the alleged injury, regardless of any statute of limitations.</p>
+<p class="text-primary">For Help: </p>
+<p>Email USAHazMat@matson.com or <br> Toll Free 1.877.678.7447 </p>
+							  </div>
+							</div>
+						  </div>
+						</div>
+
+		<!-- Modal End-->		
+
+</div>
